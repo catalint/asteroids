@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1184a71-49dc-40d8-801a-799ce81f084c" name="Default" comment="ship is now firing lasers :)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inventory/js/ship-laser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/outer-space.html" afterPath="$PROJECT_DIR$/inventory/outer-space.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/js/outer-space.js" afterPath="$PROJECT_DIR$/inventory/js/outer-space.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/page-game.html" afterPath="$PROJECT_DIR$/helpers/page-game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/js/page-game.js" afterPath="$PROJECT_DIR$/helpers/js/page-game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/ship-laser.html" afterPath="$PROJECT_DIR$/inventory/ship-laser.html" />
+    <list default="true" id="a1184a71-49dc-40d8-801a-799ce81f084c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/js/ship-laser.js" afterPath="$PROJECT_DIR$/inventory/js/ship-laser.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/js/space-ship.js" afterPath="$PROJECT_DIR$/inventory/js/space-ship.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -98,8 +93,8 @@
       <file leaf-file-name="space-ship.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inventory/js/space-ship.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26599327" vertical-offset="250" max-vertical-offset="1394">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7811448" vertical-offset="539" max-vertical-offset="1530">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -603,6 +598,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
@@ -855,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inventory/js/space-ship.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26599327" vertical-offset="250" max-vertical-offset="1394">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7811448" vertical-offset="539" max-vertical-offset="1530">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>

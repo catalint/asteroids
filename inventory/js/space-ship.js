@@ -39,19 +39,27 @@ Polymer('space-ship',{
         for (var move in this.moves) {
             if (move == 37) {
 //                console.log('left');
-                $(this).animate({left: "-=5px"}, 0);
+                if(parseFloat(this.style.left)>0){
+                    $(this).animate({left: "-=5px"}, 0);
+                }
             }
             if (move == 38) {
 //                console.log('up');
-                $(this).animate({top: "-=5px"}, 0);
+                if(parseFloat(this.style.top)>0){
+                    $(this).animate({top: "-=5px"}, 0);
+                }
             }
             if (move == 39) {
-//                console.log('right');
-                $(this).animate({left: "+=5px"}, 0);
+                var maxRight =  parseFloat($(this).parent().width())-parseFloat($(this).width());
+                if(parseFloat(this.style.left)<maxRight) {
+                    $(this).animate({left: "+=5px"}, 0);
+                }
             }
             if (move == 40) {
-//                console.log('down');
-                $(this).animate({top: "+=5px"}, 0);
+                var maxBottom =  parseFloat($(this).parent().height())-parseFloat($(this).height());
+                if(parseFloat(this.style.top)<maxBottom) {
+                    $(this).animate({top: "+=5px"}, 0);
+                }
             }
         }
     },
