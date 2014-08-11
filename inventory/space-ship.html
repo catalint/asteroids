@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="space-ship">
+<polymer-element name="space-ship" attributes="hitTest getImage">
     <template>
         <style>
             :host {
@@ -8,7 +8,7 @@
                 position: absolute;
             }
         </style>
-        <img src="../images/spaceship_170.png" width="170" height="72">
+        <img id="image" src="../images/spaceship_170.png" width="170" height="72">
     </template>
 
     <script type="text/javascript" src="js/space-ship.js"></script>

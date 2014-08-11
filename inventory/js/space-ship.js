@@ -1,6 +1,11 @@
 Polymer('space-ship',{
+    hitTest:null,
     domReady:function(){
         this.initSpaceShip();
+        this.hitTest = new HitTest( this.$.image );
+    },
+    getImage:function(){
+        return this.$.image;
     },
     initSpaceShip:function(){
         // Ship starting position

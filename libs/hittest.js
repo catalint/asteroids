@@ -218,13 +218,13 @@ HitTest.getBorderCoordinates = function( objectSource, objectMatrix, coordinateS
 };
 
 HitTest.getMatrix = function( imgSource ){
-
     var canvas = document.createElement("canvas");
 
     canvas.setAttribute( 'width', imgSource.width );
     canvas.setAttribute( 'height', imgSource.height );
 
     var objectMatrix = canvas.getContext( "2d" );
+
     objectMatrix.drawImage( imgSource, 0, 0 );
 
     return objectMatrix;

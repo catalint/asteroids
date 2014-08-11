@@ -1,6 +1,5 @@
 Polymer('outer-space',{
     domReady:function(){
-        console.log('anim backg');
         this.animateBackground();
         this.startAddingAsteroids();
     },

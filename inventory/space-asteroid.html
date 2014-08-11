@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="space-asteroid" constructor="SpaceAsteroid">
+<polymer-element name="space-asteroid" constructor="SpaceAsteroid" attributes="hitTest">
     <template>
         <style>
             :host {
@@ -8,7 +8,7 @@
                 position: absolute;
             }
         </style>
-        <img src="../images/asteroids/{{imageNumber}}.png">
+        <img id="image" src="../images/asteroids/{{imageNumber}}.png">
     </template>
     <script type="text/javascript" src="js/space-asteroid.js"></script>
 </polymer-element>

@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="ship-laser" constructor="ShipLaser">
+<polymer-element name="ship-laser" constructor="ShipLaser" attributes="hitTest">
     <template>
         <style>
             :host {
@@ -8,7 +8,7 @@
                 position: absolute;
             }
         </style>
-        <img src="../images/laser.png" width="53" height="30">
+        <img id="image" src="../images/laser.png" width="53" height="30">
     </template>
     <script type="text/javascript" src="js/ship-laser.js"></script>
 </polymer-element>
