@@ -7,15 +7,14 @@
 <link rel="import" href="../inventory/space-asteroid.html" />
 <link rel="import" href="../inventory/ship-laser.html" />
 
-<polymer-element name="page-game">
+<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip">
     <template>
         <style>
 
         </style>
 
-        <outer-space fit>
-            <space-ship></space-ship>
-            <ship-laser></ship-laser>
+        <outer-space id="outerSpace" fit>
+            <space-ship id="spaceShip"></space-ship>
             <space-asteroid></space-asteroid>
             <space-asteroid></space-asteroid>
         </outer-space>

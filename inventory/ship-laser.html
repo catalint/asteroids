@@ -1,19 +1,14 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="ship-laser">
+<polymer-element name="ship-laser" constructor="ShipLaser">
     <template>
         <style>
             :host {
                 display: block;
-                position: relative;
-                width: 53px;
-                height:30px;
-                background-image: url("../images/laser.png");
+                position: absolute;
             }
         </style>
+        <img src="../images/laser.png" width="53" height="30">
     </template>
-
-    <script>
-        Polymer({});
-    </script>
+    <script type="text/javascript" src="js/ship-laser.js"></script>
 </polymer-element>
