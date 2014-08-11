@@ -1,20 +1,14 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="space-asteroid">
+<polymer-element name="space-asteroid" constructor="SpaceAsteroid">
     <template>
         <style>
             :host {
                 display: block;
-                position: relative;
-                width: 53px;
-                height:30px;
-                background-image: url("../images/asteroids/1.png");
-                background-clip: content-box;
+                position: absolute;
             }
         </style>
+        <img src="../images/asteroids/{{imageNumber}}.png">
     </template>
-
-    <script>
-        Polymer({});
-    </script>
+    <script type="text/javascript" src="js/space-asteroid.js"></script>
 </polymer-element>
