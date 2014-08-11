@@ -17,23 +17,10 @@
         <paper-dialog id="introDialog" heading="Welcome to Asteroids!" autoCloseDisabled>
             <p><img src="../images/arrow_keys.png" width="140"> to move</p>
             <p><img src="../images/spacebar.png" width="140"> to fire</p>
-            <paper-button label="Start Game" onclick="startGame();" affirmative autofocus></paper-button>
+            <paper-button label="Start Game" on-click="{{startGame}}" affirmative autofocus></paper-button>
         </paper-dialog>
     </template>
-    <script>
-
-        function startGame(){
-            console.log('startGame');
-
-            var p = document.querySelector('core-animated-pages');
-            p.selected=1;
-        }
-        Polymer('page-intro',{
-            domReady:function(){
-                this.$.introDialog.toggle();
-            }
-        });
-    </script>
+    <script type="application/javascript" src="js/page-intro.js"></script>
 </polymer-element>
 
 
