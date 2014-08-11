@@ -68,7 +68,6 @@ Polymer('space-ship',{
     fire:true,
     fireLaser:function(){
         if(this.fire){
-            console.log('fire');
             var game = document.querySelector('page-game');
             var outerSpace = game.getOuterSpace();
             var spaceShip = game.getSpaceShip();

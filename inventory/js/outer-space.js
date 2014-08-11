@@ -9,9 +9,5 @@ Polymer('outer-space',{
         }, 8000, 'linear',function(){
             this.animateBackground();
         });
-    },
-    addLaser:function(){
-//        $(this).append(laser);
-        console.log('outer space-fire laser');
     }
 });
