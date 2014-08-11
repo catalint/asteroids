@@ -35,6 +35,7 @@ Polymer('space-asteroid',{
                 var hit = this.hitTest.toObject(spaceShip.getImage());
                 if(hit){
                     $(this).remove();
+                    spaceShip.crash();
                 }
                 steps=0;
             }

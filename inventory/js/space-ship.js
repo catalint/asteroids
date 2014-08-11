@@ -4,14 +4,22 @@ Polymer('space-ship',{
         this.initSpaceShip();
         this.hitTest = new HitTest( this.$.image );
     },
+    crash:function(){
+        // remove 1 life
+
+        this.resetShipPosition();// reset position to start
+    }
+    ,
     getImage:function(){
         return this.$.image;
     },
-    initSpaceShip:function(){
+    resetShipPosition:function(){
         // Ship starting position
         $(this).css('left','50px');
         $(this).css('top','50%');
-
+    },
+    initSpaceShip:function(){
+        this.resetShipPosition();
         setInterval(this.moveShip.bind(this), 24);
 //        setInterval(this.fireLaser.bind(this), 24);
 
