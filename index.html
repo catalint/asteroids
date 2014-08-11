@@ -31,26 +31,19 @@
 
     <link rel="stylesheet" href="css/main.css"/>
 </head>
-<body fullbleed vertical layout unresolved touch-action="auto">
+<body fullbleed vertical layout unresolved  touch-action="auto">
 
     <core-animated-pages id="game-pages" transitions="slide-from-right">
         <section>
             <page-intro></page-intro>
         </section>
         <section>
-            <core-header-panel >
-                <div class="core-header">
-                    <paper-button label="new game" raisedButton class="colored"></paper-button>
-                </div>
-                <div class="content" vertical layout>
-                    <outer-space fit>
-                        <space-ship></space-ship>
-                        <ship-laser></ship-laser>
-                        <space-asteroid></space-asteroid>
-                        <space-asteroid></space-asteroid>
-                    </outer-space>
-                </div>
-            </core-header-panel>
+            <outer-space fit>
+                <space-ship></space-ship>
+                <ship-laser></ship-laser>
+                <space-asteroid></space-asteroid>
+                <space-asteroid></space-asteroid>
+            </outer-space>
         </section>
     </core-animated-pages>
 </body>
