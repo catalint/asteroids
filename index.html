@@ -18,26 +18,40 @@
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html" />
     <link rel="import" href="bower_components/paper-button/paper-button.html" />
 
+    <link rel="import" href="helpers/page-intro.html" />
+
     <link rel="import" href="inventory/outer-space.html" />
     <link rel="import" href="inventory/space-ship.html" />
     <link rel="import" href="inventory/space-asteroid.html" />
     <link rel="import" href="inventory/ship-laser.html" />
 
+
+    <link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+    <link href="bower_components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+
     <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body fullbleed vertical layout unresolved touch-action="auto">
-<core-header-panel >
-    <div class="core-header">
-        <paper-button label="new game" raisedButton class="colored"></paper-button>
-    </div>
-    <div class="content" vertical layout>
-        <outer-space fit>
-            <space-ship></space-ship>
-            <ship-laser></ship-laser>
-            <space-asteroid></space-asteroid>
-            <space-asteroid></space-asteroid>
-        </outer-space>
-    </div>
-</core-header-panel>
+
+    <core-animated-pages id="game-pages" transitions="slide-from-right">
+        <section>
+            <page-intro></page-intro>
+        </section>
+        <section>
+            <core-header-panel >
+                <div class="core-header">
+                    <paper-button label="new game" raisedButton class="colored"></paper-button>
+                </div>
+                <div class="content" vertical layout>
+                    <outer-space fit>
+                        <space-ship></space-ship>
+                        <ship-laser></ship-laser>
+                        <space-asteroid></space-asteroid>
+                        <space-asteroid></space-asteroid>
+                    </outer-space>
+                </div>
+            </core-header-panel>
+        </section>
+    </core-animated-pages>
 </body>
 </html>

@@ -40,3 +40,19 @@ paper-button[raisedButton].colored #focusBg,
 paper-button[raisedButton].colored::shadow #focusBg {
     background: #3367d6;
 }
+
+
+
+core-animated-pages {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+section > div {
+    height: 100%;
+    color: white;
+}
