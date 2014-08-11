@@ -27,15 +27,32 @@ Polymer('space-asteroid',{
 
         var steps =0;
 
-        $(this).animate({left: "-100%"},{duration:10000,easing:'linear',complete:function(){
+        $(this).animate({left: "-150px"},{duration:10000,easing:'linear',complete:function(){
             $(this).remove();
         },step:function(){
             steps++;
-            if(steps==5){
+            // Lasers hit asteroids
+            var lasers = game.getLasers();
+            if(lasers.length>0){
+                for (var i in lasers){
+                    var laser = lasers[i];
+                    var hit = this.hitTest.toObject(laser.getImage());
+                    if(hit){
+                        $(laser).stop().remove();
+                        $(this).stop().remove();
+                    }
+                }
+            }
+            if(steps==5){ // for performance
+
+
+                // Asteroids hit space ship
                 var hit = this.hitTest.toObject(spaceShip.getImage());
                 if(hit){
-                    $(this).remove();
+                    console.log('hit');
+                    console.log(this);
                     spaceShip.crash();
+                    $(this).stop().remove();
                 }
                 steps=0;
             }

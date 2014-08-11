@@ -4,5 +4,8 @@ Polymer('page-game',{
     },
     getSpaceShip:function(){
         return this.$.spaceShip;
+    },
+    getLasers:function(){
+        return this.$.outerSpace.querySelectorAll('ship-laser').array();
     }
 });
