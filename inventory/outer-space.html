@@ -1,6 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-
 <polymer-element name="outer-space" >
     <template>
         <style>
@@ -11,15 +10,6 @@
         </style>
         <content></content>
     </template>
-    <script>
-        Polymer({});
-        function animateOuterSpaceBackground(){
-            $('outer-space').animate({
-                backgroundPositionX: '-=100%'
-            }, 8000, 'linear',function(){
-                animateOuterSpaceBackground();
-            });
-        }
-        animateOuterSpaceBackground();
-    </script>
+    <script type="text/javascript" src="../libs/bgpos.js"></script>
+    <script type="text/javascript" src="js/outer-space.js"></script>
 </polymer-element>
