@@ -1,6 +1,7 @@
 
 Polymer('page-intro',{
     domReady:function(){
+        this.startGame();
         var that=this;
         this.$.introDialog.toggle();
 
