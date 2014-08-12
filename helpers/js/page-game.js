@@ -56,7 +56,6 @@ Polymer('page-game',{
         var that=this;
         $(document).keydown(function(event) {
             var p = document.querySelector('core-animated-pages');
-            console.log(p.selected);
             if(p.selected==1){
                 that.keypressHandler(event);
             }
@@ -68,7 +67,6 @@ Polymer('page-game',{
         });
     },
     keypressHandler:function(e){
-        console.log(e.which);
         if(e.which==27){
             if(this.pause){
                 this.startGame();

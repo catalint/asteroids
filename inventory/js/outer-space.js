@@ -2,8 +2,8 @@ Polymer('outer-space',{
     timeoutAddAsteroids:null,
     animateBackground:function(){
         $(this).animate({
-            backgroundPositionX: '-=1%'
-        }, 80, 'linear', function () {
+            backgroundPositionX: '-=10000%'
+        }, 800000, 'linear', function () {
             this.animateBackground();
         });
     },

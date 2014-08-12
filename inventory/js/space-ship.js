@@ -1,8 +1,6 @@
 Polymer('space-ship',{
-    hitTest:null,
     domReady:function(){
         this.initSpaceShip();
-        this.hitTest = new HitTest( this.$.image );
     },
     crash:function(){
         // remove 1 life

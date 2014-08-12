@@ -28,21 +28,19 @@ Polymer('space-asteroid',{
             // Lasers hit asteroids
             var lasers = game.getLasers();
             if(lasers.length>0){
-                for (var i in lasers){
-                    var laser = lasers[i];
-                    var hit = this.hitTest.toObject(laser.getImage());
-                    if(hit){
-                        $(laser).stop().remove();
-                        $(this).stop().remove();
-                    }
+                    for (var i in lasers) {
+                        var laser = lasers[i];
+                        var hit = this.hitTest.toObject(laser);
+                        if (hit) {
+                            $(laser).stop().remove();
+                            $(this).stop().remove();
+                        }
                 }
             }
-            if(steps==5){ // for performance
+            if(steps==25){ // for performance
                 // Asteroids hit space ship
-                var hit = this.hitTest.toObject(spaceShip.getImage());
+                var hit = this.hitTest.toObject(spaceShip);
                 if(hit){
-                    console.log('hit');
-                    console.log(this);
                     spaceShip.crash();
                     $(this).stop().remove();
                 }
@@ -52,7 +50,7 @@ Polymer('space-asteroid',{
     },
     attached:function(){
 
-        this.hitTest = new HitTest( this.$.image );
+        this.hitTest = new HitTest( this);
 
         this.setupRandomTopPosition();
         this.startAnimation();
