@@ -1,4 +1,4 @@
-
+'use strict';
 Polymer('page-intro',{
     domReady:function(){
         var that=this;
