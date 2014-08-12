@@ -2,6 +2,12 @@ Polymer('page-help',{
     domReady:function(){
         var that=this;
 
+        $(window).blur(function(){
+            if(that.$.helpDialog.opened==false) {
+                that.$.helpDialog.toggle();
+            }
+        });
+
         $(document).keypress(function(event) {
             that.keypressHandler(event);
         });
@@ -18,15 +24,12 @@ Polymer('page-help',{
      * @param sender
      */
     keypressHandler:function(event){
-        console.log('ky');
         if(event.keyCode==32){
-            console.log('space');
             if(this.$.helpDialog.opened==true){
                   this.startGame();
             }
         }
         if(event.keyCode==27){
-            console.log('escape');
             var p = document.querySelector('core-animated-pages');
             if(p.selected==1){
                 this.$.helpDialog.toggle();
