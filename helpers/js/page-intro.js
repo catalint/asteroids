@@ -1,12 +1,12 @@
 
 Polymer('page-intro',{
     domReady:function(){
-        this.startGame();
         var that=this;
         this.$.introDialog.toggle();
 
         $(document).keypress(function(event) {
-            if(that.$.introDialog.opened){
+            var p = document.querySelector('core-animated-pages');
+            if(p.selected==0){
                 that.keypressHandler(event);
             }
         });
@@ -23,6 +23,9 @@ Polymer('page-intro',{
         }
     },
     startGame:function(){
+        var game = document.querySelector('page-game');
+        game.startGame();
+
         var p = document.querySelector('core-animated-pages');
         p.selected=1;
     }

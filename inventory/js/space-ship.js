@@ -28,18 +28,29 @@ Polymer('space-ship',{
 
     // Catch keys pressed
     keypressHandler:function(){
+        var game = document.querySelector('page-game');
+
         var that = this;
 
         $(document).keypress(function(e) {
+            if(game.pause) {
+                return;
+            }
             if(e.which==32){
                 that.fireLaser();
             }
         });
 
         $(document).keydown(function(e) {
+            if(game.pause) {
+                return;
+            }
             that.moves[e.which] = true;
         });
         $(document).keyup(function(e) {
+            if(game.pause) {
+                return;
+            }
             delete that.moves[e.which];
         });
 //        e.preventDefault();

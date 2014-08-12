@@ -17,16 +17,10 @@ Polymer('space-asteroid',{
         var pos = Math.floor(Math.random() * (max - min + 1)) + min;
         $(this).css('top',pos);
     },
-    attached:function(){
-
+    startAnimation:function(){
         var game = document.querySelector('page-game');
         var spaceShip = game.getSpaceShip();
-        this.hitTest = new HitTest( this.$.image );
-
-        this.setupRandomTopPosition();
-
         var steps =0;
-
         $(this).animate({left: "-150px"},{duration:10000,easing:'linear',complete:function(){
             $(this).remove();
         },step:function(){
@@ -44,8 +38,6 @@ Polymer('space-asteroid',{
                 }
             }
             if(steps==5){ // for performance
-
-
                 // Asteroids hit space ship
                 var hit = this.hitTest.toObject(spaceShip.getImage());
                 if(hit){
@@ -57,6 +49,14 @@ Polymer('space-asteroid',{
                 steps=0;
             }
         }});
+    },
+    attached:function(){
+
+        this.hitTest = new HitTest( this.$.image );
+
+        this.setupRandomTopPosition();
+        this.startAnimation();
+
     },
     domReady:function(){
 

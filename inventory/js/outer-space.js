@@ -1,27 +1,30 @@
 Polymer('outer-space',{
-    domReady:function(){
-        this.animateBackground();
-        this.startAddingAsteroids();
-    },
+    timeoutAddAsteroids:null,
     animateBackground:function(){
         $(this).animate({
-            backgroundPositionX: '-=100%'
-        }, 8000, 'linear',function(){
+            backgroundPositionX: '-=1%'
+        }, 80, 'linear', function () {
             this.animateBackground();
         });
     },
     addAsteroid:function(){
-        var asteroid = new SpaceAsteroid();
-        $(this).append(asteroid);
+        var game = document.querySelector('page-game');
+        if(!game.pause) {
+            var asteroid = new SpaceAsteroid();
+            $(this).append(asteroid);
+        }
+    },
+    stopAddingAsteroids:function(){
+      clearTimeout(this.timeoutAddAsteroids);
     },
     startAddingAsteroids:function(){
         var that =this;
         (function loop() {
             var rand = Math.round(Math.random() * (3000 - 500)) + 500;
-            setTimeout(function() {
-                that.addAsteroid();
-                loop();
-            }, rand);
+                that.timeoutAddAsteroids = setTimeout(function () {
+                    that.addAsteroid();
+                    loop();
+                }, rand);
         }());
     }
 });
