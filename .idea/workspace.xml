@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1184a71-49dc-40d8-801a-799ce81f084c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/js/page-help.js" afterPath="$PROJECT_DIR$/helpers/js/page-help.js" />
+    <list default="true" id="a1184a71-49dc-40d8-801a-799ce81f084c" name="Default" comment=" help menu minor adjustments">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/escape.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/js/ship-laser.js" afterPath="$PROJECT_DIR$/inventory/js/ship-laser.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -630,7 +629,8 @@
     <MESSAGE value="fixes to collision system, seems pretty good now" />
     <MESSAGE value="implemented pause game functionality on ESC and tab switch" />
     <MESSAGE value="added help menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="added help menu" />
+    <MESSAGE value=" help menu minor adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value=" help menu minor adjustments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
