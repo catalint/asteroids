@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>Asteroids!</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script  src="polymer/platform/platform.js"></script>
+    <link rel="import" href="polymer/polymer/polymer.html">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="libs/hittest.js"></script>
+
+    <link rel="import" href="polymer/font-roboto/roboto.html">
+
+    <link rel="import" href="polymer/paper-button/paper-button.html" />
+
+    <link rel="import" href="helpers/page-intro.html" />
+    <link rel="import" href="helpers/page-help.html" />
+    <link rel="import" href="helpers/page-game.html" />
+
+    <link href="polymer/core-animated-pages/core-animated-pages.html" rel="import">
+    <link href="polymer/core-animated-pages/transitions/slide-from-right.html" rel="import">
+
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body fullbleed vertical layout unresolved  touch-action="auto">
+    <core-animated-pages id="game-pages" transitions="slide-from-right">
+        <section>
+            <page-intro></page-intro>
+        </section>
+        <section>
+            <page-game></page-game>
+            <page-help></page-help>
+        </section>
+    </core-animated-pages>
+
+    <div style="position:absolute;left:-1000px"> <!-- Preload this images for hit collision to work faster -->
+        <img src="images/laser.png">
+        <img src="images/asteroids/1.png">
+        <img src="images/asteroids/2.png">
+        <img src="images/asteroids/3.png">
+        <img src="images/asteroids/4.png">
+        <img src="images/asteroids/5.png">
+        <img src="images/asteroids/6.png"></div>
+</body>
+</html>
