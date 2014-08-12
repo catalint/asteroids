@@ -1,9 +1,6 @@
 [submodule "polymer/platform"]
 	path = polymer/platform
 	url = https://github.com/Polymer/platform.git
-[submodule "polymer/polymer"]
-	path = polymer/polymer
-	url = https://github.com/Polymer/polymer.git
 [submodule "polymer/core-elements"]
 	path = polymer/core-elements
 	url = https://github.com/Polymer/core-elements.git
@@ -12,7 +9,7 @@
 	url = https://github.com/Polymer/paper-elements.git
 [submodule "polymer/font-roboto"]
 	path = polymer/font-roboto
-	url = https://github.com/Polymer/font-roboto
+	url = https://github.com/Polymer/font-roboto.git
 [submodule "polymer/paper-dialog"]
 	path = polymer/paper-dialog
 	url = https://github.com/Polymer/paper-dialog.git
@@ -55,3 +52,6 @@
 [submodule "polymer/core-meta"]
 	path = polymer/core-meta
 	url = https://github.com/Polymer/core-meta.git
+[submodule "polymer/polymer"]
+	path = polymer/polymer
+	url = https://github.com/Polymer/polymer.git
