@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog-transition.html">
+
+<polymer-element name="page-help">
+    <template>
+        <style>
+            paper-dialog paper-button {
+                font-weight: bold;
+            }
+
+            paper-button[autofocus] {
+                color: #4285f4;
+            }
+        </style>
+        <paper-dialog id="helpDialog" heading="Asteroids! Help menu" autoCloseDisabled>
+            <p><img src="../images/arrow_keys.png" width="140"> to move</p>
+            <p><img src="../images/spacebar.png" width="140"> to fire</p>
+            <p><img src="../images/escape.png" height="50"> to pause</p>
+            <paper-button label="Resume Game" on-click="{{startGame}}" horizontal end-justified layout autofocus></paper-button>
+        </paper-dialog>
+    </template>
+    <script type="application/javascript" src="js/page-help.js"></script>
+</polymer-element>

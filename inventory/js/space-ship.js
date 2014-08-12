@@ -34,6 +34,7 @@ Polymer('space-ship',{
 
         $(document).keypress(function(e) {
             if(game.pause) {
+                that.moves = {};
                 return;
             }
             if(e.which==32){
@@ -43,12 +44,14 @@ Polymer('space-ship',{
 
         $(document).keydown(function(e) {
             if(game.pause) {
+                that.moves = {};
                 return;
             }
             that.moves[e.which] = true;
         });
         $(document).keyup(function(e) {
             if(game.pause) {
+                that.moves = {};
                 return;
             }
             delete that.moves[e.which];
