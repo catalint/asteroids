@@ -18,6 +18,12 @@ Polymer('page-game',{
         return this.$.outerSpace.querySelectorAll('space-asteroid').array();
     },
     startAnimations:function(){
+        this.timeInterval = setInterval(function(){
+            if(this.timeLeft>1){
+                this.timeLeft -=1;
+                this.fire('changedTime');
+            }
+        }.bind(this),1000);
         var outerSpace = this.getOuterSpace();
         outerSpace.animateBackground();
 
@@ -36,6 +42,7 @@ Polymer('page-game',{
 
     },
     stopAnimations:function(){
+        clearTimeout(this.timeInterval);
         var outerSpace = this.getOuterSpace();
         $(outerSpace).stop();
         outerSpace.stopAddingAsteroids();

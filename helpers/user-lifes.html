@@ -1,0 +1,17 @@
+<link rel="import" href="../polymer/polymer/polymer.html">
+<link rel="import" href="user-life.html">
+
+<polymer-element name="user-lifes">
+    <template>
+        <style>
+            :host {
+                display: block;
+                color:#fff;
+            }
+        </style>
+        <template repeat="{{remainingLifes()}}">
+            <user-life></user-life>
+        </template>
+    </template>
+    <script src="js/user-lifes.js"></script>
+</polymer-element>

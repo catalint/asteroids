@@ -6,14 +6,21 @@
 <link rel="import" href="../inventory/space-ship.html" />
 <link rel="import" href="../inventory/space-asteroid.html" />
 <link rel="import" href="../inventory/ship-laser.html" />
+<link rel="import" href="game-status.html" />
+<link rel="import" href="user-lifes.html" />
+<link rel="import" href="time-left.html" />
 
-<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame">
+<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame remainingLifes timeLeft">
     <template>
         <style>
 
         </style>
 
         <outer-space id="outerSpace" fit>
+            <game-status layout horizontal end-justified>
+                <user-lifes></user-lifes>
+                <time-left></time-left>
+            </game-status>
             <space-ship id="spaceShip"></space-ship>
         </outer-space>
     </template>
