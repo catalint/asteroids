@@ -21,7 +21,9 @@ Polymer('space-asteroid',{
         var game = document.querySelector('page-game');
         var spaceShip = game.getSpaceShip();
         var steps =0;
-        $(this).animate({left: "-150px"},{duration:10000,easing:'linear',complete:function(){
+        var speed = 10000;
+        speed = parseInt(10000/game.multiplicator());
+        $(this).animate({left: "-150px"},{duration:speed,easing:'linear',complete:function(){
             $(this).remove();
         },step:function(){
             steps++;
@@ -32,6 +34,8 @@ Polymer('space-asteroid',{
                         var laser = lasers[i];
                         var hit = this.hitTest.toObject(laser);
                         if (hit) {
+                            var hitScore = parseInt(Math.random() * (40 - 15) + 15);
+                            game.score += hitScore;
                             $(laser).stop().remove();
                             $(this).stop().remove();
                         }

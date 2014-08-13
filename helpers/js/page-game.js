@@ -1,10 +1,12 @@
 Polymer('page-game',{
     pause:true,
+    level:1,
     remainingLifes:3,
     defaultLifes:3,
-    timeLeft:120,
-    defaultTimeLeft:120,
+    timeLeft:20,
+    defaultTimeLeft:20,
     timeInterval:null,
+    score:0,
     getOuterSpace:function(){
         return this.$.outerSpace;
     },
@@ -25,17 +27,71 @@ Polymer('page-game',{
         }
         this.fire('lostLife');
     },
+    multiplicator:function(){
+        if(this.level==1){
+            return 1;
+        }
+        if(this.level==2){
+            return 1.3;
+        }
+        if(this.level==3){
+            return 1.7;
+        }
+    },
+    finishedGame:function(){
+        this.stopAnimations();
+        var p = document.querySelector('core-animated-pages');
+        p.selected = 2;
+        var finish = document.querySelector('page-finish');
+        finish.score = this.score;
+    },
+    nextLevelGame:function(){
+        this.remainingLifes=this.defaultLifes;
+        this.level++;
+        this.fire('lostLife');
+        this.timeLeft = parseInt(this.defaultTimeLeft/this.multiplicator());
+        this.fire('changedTime');
+    },
+    lostAllLives:function(){
+        this.remainingLifes=this.defaultLifes;
+        this.fire('lostLife');
+        this.timeLeft = this.defaultTimeLeft;
+        this.fire('changedTime');
+    },
+    restartGame:function(){
+        this.remainingLifes=this.defaultLifes;
+        this.fire('lostLife');
+        this.timeLeft = that.defaultTimeLeft;
+        this.fire('changedTime');
+        this.level=1;
+    },
     startAnimations:function(){
+        var that = this;
+
+        //Start game after finish
+        if(this.level==3 && this.timeLeft==0){
+            this.restartGame();
+        }
+
+        // Lost of lifes code
         if(this.remainingLifes==0){
-            this.remainingLifes=3;
-            this.fire('lostLife');
-            this.timeLeft = 120;
-            this.fire('changedTime');
+            this.lostAllLives();
         }
         this.timeInterval = setInterval(function(){
-            if(this.timeLeft>1){
+            if(this.timeLeft>0){
                 this.timeLeft -=1;
                 this.fire('changedTime');
+
+                // End time code
+                if(this.timeLeft==0){
+                    //Finished game
+                    if(this.level==3){
+                        this.finishedGame();
+                    }else{ // Next level
+                        this.nextLevelGame();
+                    }
+
+                }
             }
         }.bind(this),1000);
         var outerSpace = this.getOuterSpace();
@@ -69,7 +125,7 @@ Polymer('page-game',{
         this.pause = true;
         this.stopAnimations();
     },
-    startGame:function(){
+     startGame:function(){
         this.pause = false;
         this.startAnimations();
     },

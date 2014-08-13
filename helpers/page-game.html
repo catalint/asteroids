@@ -10,14 +10,20 @@
 <link rel="import" href="user-lifes.html" />
 <link rel="import" href="time-left.html" />
 
-<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame remainingLifes timeLeft lostLife">
+<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame remainingLifes timeLeft lostLife level score multiplicator">
     <template>
         <style>
-
+            div.level,div.score{
+                font-size:2.5em;
+                color:#fff;
+                margin-right:100px;
+            }
         </style>
 
         <outer-space id="outerSpace" fit>
             <game-status layout horizontal end-justified>
+                <div class="score">{{score}}</div>
+                <div class="level">Level {{level}}</div>
                 <user-lifes></user-lifes>
                 <time-left></time-left>
             </game-status>
