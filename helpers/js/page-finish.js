@@ -2,7 +2,6 @@
 Polymer('page-finish',{
     domReady:function(){
         var that=this;
-        this.$.finishDialog.toggle();
 
         $(document).keypress(function(event) {
             var p = document.querySelector('core-animated-pages');
@@ -11,20 +10,8 @@ Polymer('page-finish',{
             }
         });
     },
-    /**
-     * Start game on space key pressed
-     * @param event
-     * @param detail
-     * @param sender
-     */
-    keypressHandler:function(event){
-        if(event.keyCode==32){
-            this.startGame();
-        }
-    },
-    startGame:function(){
-        this.$.finishDialog.toggle();
 
+    startGame:function(){
         var game = document.querySelector('page-game');
         game.startGame();
 
