@@ -38,7 +38,12 @@ Polymer('space-asteroid',{
                             var hitScore = 10;
                             game.score += hitScore;
                             $(laser).stop().remove();
-                            $(this).stop().remove();
+                            $(this).stop();
+                            this.$.image.hidden = true;
+                            this.$.explosion.hidden = false;
+                            setTimeout(function(){
+                                $(this).remove();
+                            }.bind(this),600);
                         }
                 }
             }
