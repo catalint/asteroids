@@ -3681,7 +3681,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </polymer-element>
 
 
-<polymer-element name="space-ship" attributes="hitTest getImage crash" assetpath="inventory/">
+<polymer-element name="space-ship" attributes="hitTest getImage crash resetShipPosition" assetpath="inventory/">
     <template>
         <style>
             :host {
@@ -3824,7 +3824,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 color: #4285f4;
             }
         </style>
-        <paper-dialog id="finishDialog" heading="Yeeaahh !!!" autoclosedisabled="">
+        <paper-dialog id="finishDialog" heading="Yeeaahh !!!" opened="" autoclosedisabled="">
             <p>Congrats !</p>
             <p>You&apos;ve got a score of <b>{{score}}</b></p>
             <paper-button label="Start Game" on-click="{{startGame}}" affirmative="" autofocus></paper-button>
