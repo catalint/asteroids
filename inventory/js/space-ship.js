@@ -3,9 +3,17 @@ Polymer('space-ship',{
         this.initSpaceShip();
     },
     crash:function(){
-        var game = document.querySelector('page-game');
-        game.lostLife();
-        this.resetShipPosition();// reset position to start
+        if(!this.$.image.hidden){
+            var game = document.querySelector('page-game');
+            game.lostLife();
+            this.$.explosion.hidden=false;
+            this.$.image.hidden=true;
+            setTimeout(function(){
+                this.$.explosion.hidden=true;
+                this.$.image.hidden=false;
+                this.resetShipPosition();// reset position to start
+            }.bind(this),600);
+        }
     }
     ,
     getImage:function(){
