@@ -3,8 +3,8 @@ Polymer('page-game',{
     level:1,
     remainingLifes:3,
     defaultLifes:3,
-    timeLeft:20,
-    defaultTimeLeft:20,
+    timeLeft:120,
+    defaultTimeLeft:120,
     timeInterval:null,
     score:0,
     getOuterSpace:function(){

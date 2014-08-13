@@ -20,7 +20,7 @@ Polymer('outer-space',{
     startAddingAsteroids:function(){
         var that =this;
         (function loop() {
-            var rand = Math.round(Math.random() * (3000 - 500)) + 500;
+            var rand = Math.round(Math.random() * (700 - 100)) + 100; // between 100 and 700 ms for new asteroid
                 that.timeoutAddAsteroids = setTimeout(function () {
                     that.addAsteroid();
                     loop();

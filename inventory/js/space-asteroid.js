@@ -34,7 +34,8 @@ Polymer('space-asteroid',{
                         var laser = lasers[i];
                         var hit = this.hitTest.toObject(laser);
                         if (hit) {
-                            var hitScore = parseInt(Math.random() * (40 - 15) + 15);
+//                            var hitScore = parseInt(Math.random() * (40 - 15) + 15);
+                            var hitScore = 10;
                             game.score += hitScore;
                             $(laser).stop().remove();
                             $(this).stop().remove();
