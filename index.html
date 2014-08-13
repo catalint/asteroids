@@ -3723,17 +3723,112 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script type="text/javascript" src="inventory/js/ship-laser.js"></script>
 </polymer-element>
 
-<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame" assetpath="helpers/">
+
+<polymer-element name="game-status" assetpath="helpers/">
     <template>
         <style>
+            :host {
+                display: block;
+                height: 30px;
+                margin: 16px;
+                right:0px;
+                position: absolute;
+                z-index:2;
+            }
+        </style>
+        <content></content>
+    </template>
+<script>Polymer('game-status');</script></polymer-element>
 
+
+
+<polymer-element name="user-life" assetpath="helpers/">
+    <template>
+        <style>
+            :host {
+                margin-right:15px;
+            }
+        </style>
+        <img src="images/life.png">
+    </template>
+<script>Polymer('user-life');</script></polymer-element>
+
+<polymer-element name="user-lifes" assetpath="helpers/">
+    <template>
+        <style>
+            :host {
+                display: block;
+                color:#fff;
+            }
+        </style>
+        <template repeat="{{remainingLifes}}">
+            <user-life></user-life>
+        </template>
+    </template>
+    <script src="helpers/js/user-lifes.js"></script>
+</polymer-element>
+
+
+<polymer-element name="time-left" assetpath="helpers/">
+    <template>
+        <style>
+            :host {
+                color:#fff;
+                text-shadow: #fff;
+                font-size:3em;
+                width:100px;
+            }
+        </style>
+        {{timeLeft}}
+    </template>
+    <script src="helpers/js/time-left.js"></script>
+</polymer-element>
+
+<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame remainingLifes timeLeft lostLife level score multiplicator" assetpath="helpers/">
+    <template>
+        <style>
+            div.level,div.score{
+                font-size:2.5em;
+                color:#fff;
+                margin-right:100px;
+            }
         </style>
 
         <outer-space id="outerSpace" fit="">
+            <game-status layout="" horizontal="" end-justified="">
+                <div class="score">{{score}}</div>
+                <div class="level">Level {{level}}</div>
+                <user-lifes></user-lifes>
+                <time-left></time-left>
+            </game-status>
             <space-ship id="spaceShip"></space-ship>
         </outer-space>
     </template>
     <script type="application/javascript" src="helpers/js/page-game.js"></script>
+</polymer-element></div>
+    <div hidden>
+
+
+
+
+<polymer-element name="page-finish" attributes="score" assetpath="helpers/">
+    <template>
+        <style>
+            paper-dialog paper-button {
+                font-weight: bold;
+            }
+
+            paper-button[autofocus] {
+                color: #4285f4;
+            }
+        </style>
+        <paper-dialog id="finishDialog" heading="Yeeaahh !!!" autoclosedisabled="">
+            <p>Congrats !</p>
+            <p>You&apos;ve got a score of <b>{{score}}</b></p>
+            <paper-button label="Start Game" on-click="{{startGame}}" affirmative="" autofocus></paper-button>
+        </paper-dialog>
+    </template>
+    <script type="application/javascript" src="helpers/js/page-finish.js"></script>
 </polymer-element></div>
 
     <div hidden><!--
@@ -5811,6 +5906,9 @@ it operates on the page rather than the page's children.
         <section>
             <page-game></page-game>
             <page-help></page-help>
+        </section>
+        <section>
+            <page-finish></page-finish>
         </section>
     </core-animated-pages>
 
