@@ -1,12 +1,16 @@
 'use strict';
 Polymer('user-lifes',{
-    remainingLifes:function(){
+    remainingLifes:[true,true,true],
+    created:function(){
         var game = document.querySelector('page-game');
-        var lifes = game.remainingLifes;
-        var lifesArray = [];
-        for(var i=0;i<lifes;i++){
-            lifesArray.push(true);
-        }
-       return lifesArray;
+        var that = this;
+        game.addEventListener('lostLife',function(){
+            var lifesArray = [];
+            for(var i=0;i<game.remainingLifes;i++){
+                lifesArray.push(true);
+            }
+
+            that.remainingLifes = lifesArray;
+        });
     }
 });

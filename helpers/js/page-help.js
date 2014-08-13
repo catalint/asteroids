@@ -16,6 +16,12 @@ Polymer('page-help',{
                  that.keypressHandler(event);
             }
         });
+
+
+        var game = document.querySelector('page-game');
+        game.addEventListener('openHelp',function(){
+            that.$.helpDialog.toggle();
+        });
     },
     /**
      * Start game on space key pressed

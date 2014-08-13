@@ -17,7 +17,21 @@ Polymer('page-game',{
     getAsteroids:function(){
         return this.$.outerSpace.querySelectorAll('space-asteroid').array();
     },
+    lostLife:function(){
+        this.remainingLifes--;
+        if(this.remainingLifes==0){
+            this.pauseGame();
+            this.fire('openHelp');
+        }
+        this.fire('lostLife');
+    },
     startAnimations:function(){
+        if(this.remainingLifes==0){
+            this.remainingLifes=3;
+            this.fire('lostLife');
+            this.timeLeft = 120;
+            this.fire('changedTime');
+        }
         this.timeInterval = setInterval(function(){
             if(this.timeLeft>1){
                 this.timeLeft -=1;

@@ -3,8 +3,8 @@ Polymer('space-ship',{
         this.initSpaceShip();
     },
     crash:function(){
-        // remove 1 life
-
+        var game = document.querySelector('page-game');
+        game.lostLife();
         this.resetShipPosition();// reset position to start
     }
     ,
