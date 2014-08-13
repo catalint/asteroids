@@ -3,8 +3,8 @@ Polymer('page-game',{
     level:1,
     remainingLifes:3,
     defaultLifes:3,
-    timeLeft:120,
-    defaultTimeLeft:120,
+    timeLeft:10,
+    defaultTimeLeft:10,
     timeInterval:null,
     score:0,
     getOuterSpace:function(){
@@ -59,11 +59,15 @@ Polymer('page-game',{
         this.fire('changedTime');
     },
     restartGame:function(){
+        $(this.getLasers()).remove();
+        $(this.getAsteroids()).remove();
+        this.getSpaceShip().resetShipPosition();
         this.remainingLifes=this.defaultLifes;
         this.fire('lostLife');
-        this.timeLeft = that.defaultTimeLeft;
+        this.timeLeft = this.defaultTimeLeft;
         this.fire('changedTime');
         this.level=1;
+        this.score=0;
     },
     startAnimations:function(){
         var that = this;
