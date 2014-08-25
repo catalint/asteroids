@@ -18,6 +18,20 @@
                 color:#fff;
                 margin-right:100px;
             }
+
+            .box {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                margin: 16px;
+            }
+
+            .dropped {
+                position: absolute;
+                border: 1px solid black;
+                width: 5px;
+                height: 5px;
+            }
         </style>
 
         <outer-space id="outerSpace" fit>
@@ -28,7 +42,9 @@
                 <time-left></time-left>
             </game-status>
             <space-ship id="spaceShip"></space-ship>
+
         </outer-space>
     </template>
+    <script type="text/javascript" src="../libs/draggabilly.pkgd.min.js"></script>
     <script type="application/javascript" src="js/page-game.js"></script>
 </polymer-element>

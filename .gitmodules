@@ -67,3 +67,6 @@
 [submodule "polymer/tools"]
 	path = polymer/tools
 	url = https://github.com/Polymer/tools.git
+[submodule "polymer/core-drag-drop"]
+	path = polymer/core-drag-drop
+	url = https://github.com/Polymer/core-drag-drop.git

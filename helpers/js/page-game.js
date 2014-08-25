@@ -143,6 +143,10 @@ Polymer('page-game',{
          });
 
 
+
+        var draggie = new Draggabilly( this.getSpaceShip(), {
+            // options...
+        });
         $(window).blur(function(){
             that.pauseGame();
         });

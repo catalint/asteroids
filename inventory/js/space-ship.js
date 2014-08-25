@@ -21,8 +21,10 @@ Polymer('space-ship',{
     },
     resetShipPosition:function(){
         // Ship starting position
-        $(this).css('left','50px');
-        $(this).css('top','50%');
+        var game = document.querySelector('page-game');
+
+        $(game.getSpaceShip()).css('left','50px');
+        $(game.getSpaceShip()).css('top','300px');
     },
     initSpaceShip:function(){
         var that = this;
@@ -32,12 +34,14 @@ Polymer('space-ship',{
         setInterval(this.moveShip.bind(this), 24);
 //        setInterval(this.fireLaser.bind(this), 24);
 
+        /*
         PolymerGestures.addEventListener(document.body,'tap',function(ev){
                 if(game.pause) {
                     return;
                 }
             that.fireLaser();
         });
+        */
 
         this.keypressHandler();
     },
