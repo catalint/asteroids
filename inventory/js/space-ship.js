@@ -119,8 +119,14 @@ Polymer('space-ship',{
 
             var laser = new ShipLaser();
 
-            $(laser).css('top',parseFloat($(spaceShip).css('top'))+25);
-            $(laser).css('left',parseFloat($(spaceShip).css('left'))+150+'px');
+            if(game.laserPosition.y != undefined){
+                $(laser).css('top',game.laserPosition.y);
+                $(laser).css('left',game.laserPosition.x);
+            }else{
+                $(laser).css('top',parseFloat($(spaceShip).css('top'))+25);
+                $(laser).css('left',parseFloat($(spaceShip).css('left'))+150+'px');
+            }
+
 
 
             $(outerSpace).append(laser);

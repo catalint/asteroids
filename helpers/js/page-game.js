@@ -7,6 +7,7 @@ Polymer('page-game',{
     defaultTimeLeft:120,
     timeInterval:null,
     score:0,
+    laserPosition:{},
     getOuterSpace:function(){
         return this.$.outerSpace;
     },
@@ -144,8 +145,13 @@ Polymer('page-game',{
 
 //       $(this.getSpaceShip()).draggable();
         var draggie = new Draggabilly( this.getSpaceShip(), {
-            preventDefault:false
-            // options...
+
+        });
+        draggie.on( 'dragMove', function( draggieInstance, event, pointer ) {
+           that.laserPosition = pointer;
+        });
+        draggie.on( 'dragEnd', function( draggieInstance, event, pointer ) {
+            that.laserPosition = {};
         });
         $(window).blur(function(){
             that.pauseGame();

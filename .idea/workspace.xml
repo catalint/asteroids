@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a1184a71-49dc-40d8-801a-799ce81f084c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/draggabilly.pkgd.min.js" afterPath="$PROJECT_DIR$/libs/draggabilly.pkgd.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/page-game.html" afterPath="$PROJECT_DIR$/helpers/page-game.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/js/page-game.js" afterPath="$PROJECT_DIR$/helpers/js/page-game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory/js/space-ship.js" afterPath="$PROJECT_DIR$/inventory/js/space-ship.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="asteroids.iws" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="page-game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/js/page-game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="2856">
-              <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="2958">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -57,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="draggabilly.pkgd.min.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="draggabilly.pkgd.min.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/draggabilly.pkgd.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20067453" vertical-offset="0" max-vertical-offset="593">
-              <caret line="7" column="9596" selection-start-line="7" selection-start-column="9596" selection-end-line="7" selection-end-column="9596" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <caret line="7" column="9309" selection-start-line="7" selection-start-column="9273" selection-end-line="7" selection-end-column="9309" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -92,8 +94,8 @@
       <file leaf-file-name="page-game.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/page-game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2307693" vertical-offset="223" max-vertical-offset="952">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="952">
+              <caret line="12" column="212" selection-start-line="12" selection-start-column="212" selection-end-line="12" selection-end-column="212" />
               <folding />
             </state>
           </provider>
@@ -109,12 +111,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="space-ship.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="space-ship.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inventory/js/space-ship.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1447" max-vertical-offset="2278">
-              <caret line="97" column="93" selection-start-line="97" selection-start-column="88" selection-end-line="97" selection-end-column="93" />
-              <folding />
+            <state vertical-scroll-proportion="0.5231023" vertical-offset="1740" max-vertical-offset="2380">
+              <caret line="121" column="48" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
+              <folding>
+                <marker date="1408980668212" expanded="true" signature="3563:3695" placeholder="{...}" />
+                <marker date="1408980668212" expanded="true" signature="3699:3874" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,18 +173,18 @@
         <option value="$PROJECT_DIR$/helpers/page-finish.html" />
         <option value="$PROJECT_DIR$/helpers/js/page-finish.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/inventory/js/space-ship.js" />
         <option value="$PROJECT_DIR$/bower_components/jquery-ui/ui/draggable.js" />
         <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/inventory/ship-laser.html" />
         <option value="$PROJECT_DIR$/inventory/space-ship.html" />
         <option value="$PROJECT_DIR$/helpers/user-life.html" />
-        <option value="$PROJECT_DIR$/helpers/page-game.html" />
         <option value="$PROJECT_DIR$/helpers/game-status.html" />
         <option value="$PROJECT_DIR$/helpers/time-left.html" />
         <option value="$PROJECT_DIR$/inventory/space-asteroid.html" />
-        <option value="$PROJECT_DIR$/helpers/js/page-game.js" />
         <option value="$PROJECT_DIR$/libs/draggabilly.pkgd.min.js" />
+        <option value="$PROJECT_DIR$/helpers/js/page-game.js" />
+        <option value="$PROJECT_DIR$/helpers/page-game.html" />
+        <option value="$PROJECT_DIR$/inventory/js/space-ship.js" />
       </list>
     </option>
   </component>
@@ -961,38 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventory/js/space-asteroid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventory/js/space-ship.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1447" max-vertical-offset="2278">
-          <caret line="97" column="93" selection-start-line="97" selection-start-column="88" selection-end-line="97" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventory/js/ship-laser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/page-game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2307693" vertical-offset="223" max-vertical-offset="952">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/time-left.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="340">
@@ -1025,20 +998,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/js/page-game.js">
+    <entry file="file://$PROJECT_DIR$/libs/draggabilly.pkgd.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="2856">
-          <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="7" column="9309" selection-start-line="7" selection-start-column="9273" selection-end-line="7" selection-end-column="9309" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventory/js/space-asteroid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/draggabilly.pkgd.min.js">
+    <entry file="file://$PROJECT_DIR$/helpers/page-game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20067453" vertical-offset="0" max-vertical-offset="593">
-          <caret line="7" column="9596" selection-start-line="7" selection-start-column="9596" selection-end-line="7" selection-end-column="9596" />
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="952">
+          <caret line="12" column="212" selection-start-line="12" selection-start-column="212" selection-end-line="12" selection-end-column="212" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/js/page-game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="2958">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventory/js/ship-laser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventory/js/space-ship.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5231023" vertical-offset="1740" max-vertical-offset="2380">
+          <caret line="121" column="48" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1408980668212" expanded="true" signature="3563:3695" placeholder="{...}" />
+            <marker date="1408980668212" expanded="true" signature="3699:3874" placeholder="{...}" />
           </folding>
         </state>
       </provider>
