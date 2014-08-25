@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Asteroids!</title>
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
 
     <script src="polymer/platform/platform.js"></script>
     <div hidden><!--
@@ -297,12 +297,14 @@ html /deep/ [segment], html /deep/ segment {
 <!--<link rel="import" href="../polymer-dev/polymer.html">--> </div>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="libs/mobile-drag.js"></script>
 
 
     <meta property="og:image" content="http://catalint.ro/asteroids/images/spaceship.png">
     <meta name="description" content="Asteroids game made using Polymer, have fun playing.">
 
     <script type="text/javascript" src="libs/hittest.js"></script>
+    <script type="text/javascript" src="libs/detectmobilebrowser.js"></script>
 
     <div hidden><!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
@@ -3630,9 +3632,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         </style>
         <paper-dialog id="introDialog" heading="Welcome to Asteroids!" autoclosedisabled="">
-            <p><img src="images/arrow_keys.png" width="140"> to move</p>
-            <p><img src="images/spacebar.png" width="140"> to fire</p>
-            <p><img src="images/escape.png" height="50"> to pause</p>
+            <div id="desktopVersion">
+                <p><img src="images/arrow_keys.png" width="140"> to move</p>
+                <p><img src="images/spacebar.png" width="140"> to fire</p>
+                <p><img src="images/escape.png" height="50"> to pause</p>
+            </div>
+            <div id="mobileVersion" hidden="true">
+                <p>Drag space-ship &amp; touch anywhere to shoot.</p>
+                <p>Have fun!</p>
+            </div>
             <paper-button label="Start Game" on-click="{{startGame}}" affirmative="" autofocus></paper-button>
         </paper-dialog>
     </template>
@@ -3655,9 +3663,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         </style>
         <paper-dialog id="helpDialog" heading="Asteroids! Help menu" autoclosedisabled="">
-            <p><img src="images/arrow_keys.png" width="140"> to move</p>
-            <p><img src="images/spacebar.png" width="140"> to fire</p>
-            <p><img src="images/escape.png" height="50"> to pause</p>
+            <div id="desktopVersion">
+                <p><img src="images/arrow_keys.png" width="140"> to move</p>
+                <p><img src="images/spacebar.png" width="140"> to fire</p>
+                <p><img src="images/escape.png" height="50"> to pause</p>
+            </div>
+            <div id="mobileVersion" hidden="true">
+                <p>Drag space-ship &amp; touch anywhere to shoot.</p>
+                <p>Have fun!</p>
+            </div>
             <paper-button label="Resume Game" on-click="{{startGame}}" horizontal="" end-justified="" layout="" autofocus></paper-button>
         </paper-dialog>
     </template>
@@ -3692,6 +3706,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 display: block;
                 position: absolute;
             }
+            @media screen and (max-device-width: 480px){
+                #image,#explosion{
+                    width: 20%;
+                    height:20%;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                #image,#explosion{
+                    width: 30%;
+                    height:30%;
+                }
+            }
+            @media screen and (max-device-width: 1800px){
+                #image,#explosion{
+                    width: 50%;
+                    height:50%;
+                }
+            }
         </style>
         <img id="image" src="images/spaceship_170.png" width="170" height="72">
         <img id="explosion" src="images/ship_explosion.gif" width="142" height="200" hidden>
@@ -3708,6 +3740,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 display: block;
                 position: absolute;
             }
+            #image,#explosion{
+                transition-property: none !important;
+                transform: none !important;
+                animation: none !important;
+            }
+            @media screen and (max-device-width: 480px){
+                #image,#explosion{
+                    width: 20px;
+                    height:20px;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                #image,#explosion{
+                    width: 30px;
+                    height:30px;
+                }
+            }
+            @media screen and (max-device-width: 1800px){
+                #image,#explosion{
+                    width: 50px;
+                    height:50px;
+                }
+            }
         </style>
         <img id="image" src="images/asteroids/{{imageNumber}}.png">
         <img id="explosion" src="images/ship_explosion.gif" hidden>
@@ -3723,6 +3778,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 display: block;
                 position: absolute;
             }
+            @media screen and (max-device-width: 480px){
+                #image,#explosion{
+                    width: 20%;
+                    height:20%;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                #image,#explosion{
+                    width: 30%;
+                    height:30%;
+                }
+            }
+            @media screen and (max-device-width: 1800px){
+                #image,#explosion{
+                    width: 50%;
+                    height:50%;
+                }
+            }
         </style>
         <img id="image" src="images/laser.png" width="53" height="30">
     </template>
@@ -3734,12 +3807,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
         <style>
             :host {
+                font-size:2.5em;
                 display: block;
                 height: 30px;
                 margin: 16px;
                 right:0px;
                 position: absolute;
                 z-index:2;
+            }
+            @media screen and (max-device-width: 480px){
+                :host{
+                    font-size:1em;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                :host{
+                    font-size:1em;
+                }
+            }
+            @media screen and (max-device-width: 1800px){
+                :host{
+                    font-size:1em;
+                }
             }
         </style>
         <content></content>
@@ -3754,8 +3843,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             :host {
                 margin-right:15px;
             }
+            @media screen and (max-device-width: 480px){
+                #image{
+                    height:20px;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                #image{
+                    height:20px;
+                }
+            }
+            @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+                #image{
+                    height:20px;
+                }
+            }
         </style>
-        <img src="images/life.png">
+        <img id="image" src="images/life.png">
     </template>
 <script>Polymer('user-life');</script></polymer-element>
 
@@ -3781,7 +3885,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             :host {
                 color:#fff;
                 text-shadow: #fff;
-                font-size:3em;
                 width:100px;
             }
         </style>
@@ -3790,13 +3893,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script src="helpers/js/time-left.js"></script>
 </polymer-element>
 
-<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame remainingLifes timeLeft lostLife level score multiplicator" assetpath="helpers/">
+<polymer-element name="page-game" attributes="getOuterSpace getSpaceShip getLasers pause stopAnimations startAnimations pauseGame startGame remainingLifes timeLeft lostLife level score multiplicator laserPosition" assetpath="helpers/">
     <template>
         <style>
             div.level,div.score{
-                font-size:2.5em;
                 color:#fff;
                 margin-right:100px;
+            }
+
+            .box {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                margin: 16px;
+            }
+
+            .dropped {
+                position: absolute;
+                border: 1px solid black;
+                width: 5px;
+                height: 5px;
             }
         </style>
 
@@ -3808,8 +3924,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <time-left></time-left>
             </game-status>
             <space-ship id="spaceShip"></space-ship>
+
         </outer-space>
     </template>
+
+
     <script type="application/javascript" src="helpers/js/page-game.js"></script>
 </polymer-element></div>
     <div hidden>
