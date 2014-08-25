@@ -13,6 +13,7 @@ $.fn.dragMe = function() {
         e.stopPropagation();
     };
     var moveMe = function(e) {
+        e.stopPropagation();
         e.preventDefault();
         var orig = e.originalEvent;
         $(this).css({
