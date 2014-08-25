@@ -10,6 +10,7 @@ $.fn.dragMe = function() {
             x: orig.changedTouches[0].pageX - pos.left,
             y: orig.changedTouches[0].pageY - pos.top
         };
+        e.stopPropagation();
     };
     var moveMe = function(e) {
         e.preventDefault();
