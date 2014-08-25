@@ -4,12 +4,28 @@
     <template>
         <style>
             :host {
+                font-size:2.5em;
                 display: block;
                 height: 30px;
                 margin: 16px;
                 right:0px;
                 position: absolute;
                 z-index:2;
+            }
+            @media screen and (max-device-width: 480px){
+                :host{
+                    font-size:1em;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                :host{
+                    font-size:1em;
+                }
+            }
+            @media screen and (max-device-width: 1800px){
+                :host{
+                    font-size:1em;
+                }
             }
         </style>
         <content></content>
