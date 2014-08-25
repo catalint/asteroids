@@ -29,6 +29,11 @@ Polymer('space-ship',{
         setInterval(this.moveShip.bind(this), 24);
 //        setInterval(this.fireLaser.bind(this), 24);
 
+        var that = this;
+        PolymerGestures.addEventListener(document.body,'tap',function(ev){
+            that.fireLaser();
+        });
+
         this.keypressHandler();
     },
 

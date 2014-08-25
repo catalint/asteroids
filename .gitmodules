@@ -55,3 +55,15 @@
 [submodule "polymer/polymer"]
 	path = polymer/polymer
 	url = https://github.com/Polymer/polymer.git
+[submodule "polymer/PointerEvents"]
+	path = polymer/PointerEvents
+	url = https://github.com/Polymer/PointerEvents.git
+[submodule "polymer/PointerGestures"]
+	path = polymer/PointerGestures
+	url = https://github.com/Polymer/PointerGestures.git
+[submodule "polymer/polymer-gestures"]
+	path = polymer/polymer-gestures
+	url = https://github.com/Polymer/polymer-gestures.git
+[submodule "polymer/tools"]
+	path = polymer/tools
+	url = https://github.com/Polymer/tools.git
