@@ -142,27 +142,10 @@ Polymer('page-game',{
             }
          });
 
-        $.ui.draggable.prototype.destroy = function (ul, item) { alert('z'); };
-        $.ui.draggable.prototype.remove = function() {
-            alert('x');
-            if(!this.element.data('draggable')) return;
-            this.element
-                .removeData("draggable")
-                .unbind(".draggable")
-                .removeClass("ui-draggable"
-                    + " ui-draggable-dragging"
-                    + " ui-draggable-disabled");
-            this._mouseDestroy();
-
-            return this;
-        };
-
-       $(this.getSpaceShip()).draggable();
-        /*
+//       $(this.getSpaceShip()).draggable();
         var draggie = new Draggabilly( this.getSpaceShip(), {
             // options...
         });
-        */
         $(window).blur(function(){
             that.pauseGame();
         });
