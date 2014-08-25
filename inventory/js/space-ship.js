@@ -25,12 +25,17 @@ Polymer('space-ship',{
         $(this).css('top','50%');
     },
     initSpaceShip:function(){
+        var that = this;
+        var game = document.querySelector('page-game');
+
         this.resetShipPosition();
         setInterval(this.moveShip.bind(this), 24);
 //        setInterval(this.fireLaser.bind(this), 24);
 
-        var that = this;
         PolymerGestures.addEventListener(document.body,'tap',function(ev){
+                if(game.pause) {
+                    return;
+                }
             that.fireLaser();
         });
 
