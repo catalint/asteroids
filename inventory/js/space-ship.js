@@ -34,12 +34,16 @@ Polymer('space-ship',{
         setInterval(this.moveShip.bind(this), 24);
 //        setInterval(this.fireLaser.bind(this), 24);
 
+        $('body').click(function(){
+            that.fireLaser();
+        });
+        /*
         PolymerGestures.addEventListener(game,'tap',function(ev){
                 if(game.pause) {
                     return;
                 }
             that.fireLaser();
-        });
+        });*/
 
         this.keypressHandler();
     },
@@ -119,6 +123,7 @@ Polymer('space-ship',{
 
             var laser = new ShipLaser();
 
+            console.log(game.laserPosition);
             if(game.laserPosition.y != undefined){
                 $(laser).css('top',game.laserPosition.y);
                 $(laser).css('left',game.laserPosition.x);
