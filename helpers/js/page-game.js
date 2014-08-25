@@ -144,6 +144,7 @@ Polymer('page-game',{
 
 //       $(this.getSpaceShip()).draggable();
         var draggie = new Draggabilly( this.getSpaceShip(), {
+            preventDefault:false
             // options...
         });
         $(window).blur(function(){
