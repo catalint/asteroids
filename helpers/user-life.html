@@ -6,7 +6,25 @@
             :host {
                 margin-right:15px;
             }
+            @media screen and (max-device-width: 480px){
+                #image,#explosion{
+                    width: 20%;
+                    height:20%;
+                }
+            }
+            @media screen and (max-device-width: 640px){
+                #image,#explosion{
+                    width: 30%;
+                    height:30%;
+                }
+            }
+            @media screen and (max-device-width: 1800px){
+                #image,#explosion{
+                    width: 50%;
+                    height:50%;
+                }
+            }
         </style>
-        <img src="../images/life.png">
+        <img id="image" src="../images/life.png">
     </template>
 </polymer-element>
