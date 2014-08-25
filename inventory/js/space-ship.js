@@ -34,7 +34,7 @@ Polymer('space-ship',{
         setInterval(this.moveShip.bind(this), 24);
 //        setInterval(this.fireLaser.bind(this), 24);
 
-        PolymerGestures.addEventListener(document.body,'tap',function(ev){
+        PolymerGestures.addEventListener(game,'tap',function(ev){
                 if(game.pause) {
                     return;
                 }
