@@ -24,7 +24,7 @@ Polymer('space-ship',{
         var game = document.querySelector('page-game');
 
         $(game.getSpaceShip()).css('left','50px');
-        $(game.getSpaceShip()).css('top','300px');
+        $(game.getSpaceShip()).css('top','50%');
     },
     initSpaceShip:function(){
         var that = this;
