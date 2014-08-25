@@ -3,7 +3,10 @@ Polymer('page-intro',{
     domReady:function(){
         var that=this;
         this.$.introDialog.toggle();
-
+        if(jQuery.browser.mobile){
+            this.$.desktopVersion.hidden=true;
+            this.$.mobileVersion.hidden=false;
+        }
         $(document).keypress(function(event) {
             var p = document.querySelector('core-animated-pages');
             if(p.selected==0){

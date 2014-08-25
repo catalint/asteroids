@@ -15,9 +15,15 @@
             }
         </style>
         <paper-dialog id="introDialog" heading="Welcome to Asteroids!" autoCloseDisabled>
-            <p><img src="../images/arrow_keys.png" width="140"> to move</p>
-            <p><img src="../images/spacebar.png" width="140"> to fire</p>
-            <p><img src="../images/escape.png" height="50"> to pause</p>
+            <div id="desktopVersion">
+                <p><img src="../images/arrow_keys.png" width="140"> to move</p>
+                <p><img src="../images/spacebar.png" width="140"> to fire</p>
+                <p><img src="../images/escape.png" height="50"> to pause</p>
+            </div>
+            <div id="mobileVersion" hidden="true">
+                <p>Drag space-ship & touch anywhere to shoot.</p>
+                <p>Have fun!</p>
+            </div>
             <paper-button label="Start Game" on-click="{{startGame}}" affirmative autofocus></paper-button>
         </paper-dialog>
     </template>

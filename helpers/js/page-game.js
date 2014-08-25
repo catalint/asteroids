@@ -135,7 +135,12 @@ Polymer('page-game',{
         this.startAnimations();
     },
     ready:function(){
+
+
         var that=this;
+        this.addEventListener('touchstart',function(e){
+            this.getSpaceShip().fireLaser();
+        });
         $(document).keydown(function(event) {
             var p = document.querySelector('core-animated-pages');
             if(p.selected==1){
@@ -143,16 +148,7 @@ Polymer('page-game',{
             }
          });
 
-//       $(this.getSpaceShip()).draggable();
-        var draggie = new Draggabilly( this.getSpaceShip(), {
 
-        });
-        draggie.on( 'dragMove', function( draggieInstance, event, pointer ) {
-           that.laserPosition = pointer;
-        });
-        draggie.on( 'dragEnd', function( draggieInstance, event, pointer ) {
-            that.laserPosition = {};
-        });
         $(window).blur(function(){
             that.pauseGame();
         });

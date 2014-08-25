@@ -2,6 +2,10 @@ Polymer('page-help',{
     domReady:function(){
         var that=this;
 
+        if(jQuery.browser.mobile){
+            this.$.desktopVersion.hidden=true;
+            this.$.mobileVersion.hidden=false;
+        }
         $(window).blur(function(){
             if(that.$.helpDialog.opened==false) {
                 that.$.helpDialog.toggle();
