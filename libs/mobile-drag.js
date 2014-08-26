@@ -5,7 +5,6 @@ $.fn.dragMe = function() {
         var pos = {};
         pos.left = this.offsetLeft;
         pos.top = this.offsetTop;
-        console.log(pos);
         offset = {
             x: orig.changedTouches[0].pageX - pos.left,
             y: orig.changedTouches[0].pageY - pos.top
